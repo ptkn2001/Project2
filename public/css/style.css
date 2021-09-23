@@ -21,7 +21,10 @@ body {
 
 a {
     color: var(--dark);
+    padding-left: 10px;
+    padding-right: 10px;
     text-decoration: none;
+    text-align: center;
 }
 
 a:hover {
@@ -72,13 +75,8 @@ header {
 
 nav {
     display: flex;
+    justify-content: space-between;
     background-color: var(--secondary);
-}
-
-nav a {
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
 }
 
 nav a:hover {

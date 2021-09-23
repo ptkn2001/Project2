@@ -12,12 +12,19 @@
         <h1>Non-Profit Events Management System</h1>
     </header>
     <nav>
-        <a href="/">Home</a> 
+        <div class="left-side">
+        <a href="/">Home</a>
+        <a href="/activeprojects">Active Projects</a>
         {{#if logged_in}}
-        <a href="/">Active Projects</a>
-        <a href="/" id="logout">logout</a> 
+        <a href="/myprojects">My Projects</a>
+        <a href="/" id="logout">logout</a>
+        </div>
+        <div class="right-side">
+        <a id="user_name">Welcome {{user_name}}</a>
+        </div>
         {{else}}
-        <a href="/login">login</a> 
+        <a href="/login">login</a>
+         </div>
         {{/if}}
     </nav>
     <main>
