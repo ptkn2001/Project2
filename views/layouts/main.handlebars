@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Profit EMS</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Non-Profit Events Management System</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a> 
+        {{#if logged_in}}
+        <a href="/">Active Projects</a>
+        <a href="/" id="logout">logout</a> 
+        {{else}}
+        <a href="/login">login</a> 
+        {{/if}}
+    </nav>
+    <main>
+        {{{body}}}
+    </main>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+</html>
