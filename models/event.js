@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Task extends Model {}
+class Event extends Model {}
 
-Task.init({
+Event.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -14,27 +14,12 @@ Task.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    project_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'project',
-            key: 'id',
-        },
-    },
-    task_owner_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'user',
-            key: 'id',
-        },
-    },
 }, {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'task',
+    modelName: 'event',
 });
 
-module.exports = Task;
+module.exports = Event;
