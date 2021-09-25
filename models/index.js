@@ -1,6 +1,5 @@
 const User = require('./user');
 const Project = require('./project');
-const Event = require('./event');
 const Task = require('./task');
 
 User.hasMany(Project, {
@@ -10,14 +9,6 @@ User.hasMany(Project, {
 
 Project.belongsTo(User, {
     foreignKey: 'organizer_id'
-});
-
-User.hasOne(Event, {
-    foreignKey: 'event_id'
-});
-
-Event.belongsTo(User, {
-    foreignKey: 'event_id'
 });
 
 Project.hasMany(Task, {
@@ -38,4 +29,4 @@ Task.belongsTo(User, {
     foreignKey: 'task_owner_id'
 });
 
-module.exports = { User, Project, Event, Task };
+module.exports = { User, Project, Task };

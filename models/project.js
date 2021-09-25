@@ -27,12 +27,9 @@ Project.init({
         allowNull: false,
         defaultValue: 0,
     },
-    event_type_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'event',
-            key: 'id',
-        },
+    event_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     organizer_id: {
         type: DataTypes.INTEGER,
