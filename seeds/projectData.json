@@ -1,9 +1,17 @@
 [{
         "name": "Thankgiving Dinner",
-        "user_id": "1"
+        "description": "This event is to provide 500 Thankgiving meals for the homeless.  Please join our effort by either donate your time or money for a good cause.",
+        "event_date": "11/25/2021",
+        "event_fund": "400",
+        "event_name": "Event",
+        "organizer_id": "1"
     },
     {
         "name": "Christmas Dinner",
-        "user_id": "2"
+        "description": "This event is to raise money for the under-privilage children.  Please consider donating your time or money to help put a smile on a child's face during Christmas.",
+        "event_date": "12/24/2021",
+        "event_fund": "500",
+        "event_name": "Party",
+        "organizer_id": "2"
     }
 ]

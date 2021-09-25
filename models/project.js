@@ -14,12 +14,24 @@ Project.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    date_created: {
+    description: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+    },
+    event_date: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    event_fund: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+    },
+    event_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    organizer_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',

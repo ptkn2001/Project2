@@ -90,6 +90,38 @@ main {
     flex-wrap: wrap;
 }
 
+.project {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    margin: 20px;
+}
+
+.project-item-group {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 20px;
+}
+
+.project-item-group a {
+    color: var(--dark);
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.project-item-group img {
+    width: 200px;
+    height: 200px;
+}
+
+.projects-header {
+    text-align: center;
+}
+
 .btn-no-style {
     background: none;
     border: none;
@@ -104,6 +136,13 @@ main {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.divider {
+    width: 100%;
+    height: 3px;
+    border-top: 2px rgb(78, 74, 134) solid;
+    margin: 30px 0;
 }
 
 .justify-center {

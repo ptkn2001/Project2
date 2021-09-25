@@ -1,11 +1,16 @@
 [{
         "name": "John Smith",
-        "email": "john@hotmail.com",
+        "email": "john@gmail.com",
         "password": "password1"
     },
     {
         "name": "Paul Lavere",
         "email": "paul@gmail.com",
+        "password": "password1"
+    },
+    {
+        "name": "Adam Apple",
+        "email": "adam@gmail.com",
         "password": "password1"
     }
 ]
