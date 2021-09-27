@@ -27,7 +27,7 @@ Project.init({
         allowNull: false,
         defaultValue: 0,
     },
-    event_name: {
+    event_type: {
         type: DataTypes.STRING,
         allowNull: false,
     },

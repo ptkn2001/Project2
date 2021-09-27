@@ -13,7 +13,11 @@ router.get('/', (req, res) => {
 
 router.get('/activeprojects', async(req, res) => {
     try {
-        const projectData = await Project.findAll();
+        const projectData = await Project.findAll({
+            order: [
+                ['event_date', 'ASC']
+            ],
+        });
 
         const projects = projectData.map((project) => project.get({ plain: true }));
 
@@ -22,7 +26,9 @@ router.get('/activeprojects', async(req, res) => {
         res.render('activeprojects', {
             projects,
             logged_in: req.session.logged_in,
-            user_name: req.session.user_name
+            user_id: req.session.user_id,
+            user_name: req.session.user_name,
+            user_email: req.session.user_email
         });
     } catch (err) {
         res.status(500).json(err);
@@ -35,6 +41,9 @@ router.get('/myprojects', withAuth, async(req, res) => {
             where: {
                 organizer_id: req.session.user_id,
             },
+            order: [
+                ['event_date', 'ASC']
+            ],
         });
 
         const projects = projectData.map((project) => project.get({ plain: true }));
@@ -42,7 +51,22 @@ router.get('/myprojects', withAuth, async(req, res) => {
         res.render('myprojects', {
             projects,
             logged_in: req.session.logged_in,
-            user_name: req.session.user_name
+            user_id: req.session.user_id,
+            user_name: req.session.user_name,
+            user_email: req.session.user_email
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/addnewproject', withAuth, async(req, res) => {
+    try {
+        res.render('newproject', {
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
+            user_name: req.session.user_name,
+            user_name: req.session.user_email
         });
     } catch (err) {
         res.status(500).json(err);
