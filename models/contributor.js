@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Task extends Model {}
+class Contributor extends Model {}
 
-Task.init({
+Contributor.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -11,7 +11,7 @@ Task.init({
         autoIncrement: true,
     },
     name: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     project_id: {
@@ -26,7 +26,7 @@ Task.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'task',
+    modelName: 'contributor',
 });
 
-module.exports = Task;
+module.exports = Contributor;

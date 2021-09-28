@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project } = require('../models');
+const { User, Project, Task, Contributor } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -20,8 +20,6 @@ router.get('/activeprojects', async(req, res) => {
         });
 
         const projects = projectData.map((project) => project.get({ plain: true }));
-
-        console.log(projects);
 
         res.render('activeprojects', {
             projects,
@@ -70,6 +68,55 @@ router.get('/addnewproject', withAuth, async(req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.get('/projectdetails/:id', async(req, res) => {
+    try {
+
+        const projectData = await Project.findByPk(req.params.id, {
+            include: {
+                model: User
+            },
+        });
+
+        const project = projectData.get({ plain: true });
+
+        console.log(project);
+
+
+        const tasksData = await Task.findAll({
+            where: { project_id: req.params.id },
+        })
+
+        let tasks = [];
+
+        if (tasksData) {
+            tasks = tasksData.map((task) => task.get({ plain: true }));
+        }
+
+        const contributorsData = await Contributor.findAll({
+            where: { project_id: req.params.id },
+        })
+
+        let contributors = [];
+
+        if (contributorsData) {
+            contributors = contributorsData.map((contributor) => contributor.get({ plain: true }));
+        }
+
+        res.render('projectDetails', {
+            project_id: project.id,
+            project_name: project.name,
+            project_description: project.description,
+            project_organizer: project.user.name,
+            project_contact: project.user.email,
+            tasks,
+            contributors,
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(400).json(err);
     }
 });
 

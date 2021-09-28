@@ -162,6 +162,19 @@ main {
     height: auto;
 }
 
+.new-project h2 {
+    margin-left: 40px;
+}
+
+#project-description,
+#project-date {
+    margin-left: 15px;
+}
+
+#event-type {
+    margin-left: 10px;
+}
+
 .project-info {
     display: flex;
     flex: 0 0 25%;

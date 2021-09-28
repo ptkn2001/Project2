@@ -1,26 +1,17 @@
 [{
-        "name": "Cook Turkeys",
-        "project_id": "1",
-        "task_owner_id": "1"
+        "name": "Bring Turkeys",
+        "project_id": "1"
     },
     {
-        "name": "Prepare Drinks",
-        "project_id": "1",
-        "task_owner_id": "3"
+        "name": "Bring Drinks",
+        "project_id": "1"
     },
     {
-        "name": "Prepare Food",
-        "project_id": "2",
-        "task_owner_id": "2"
-    },
-    {
-        "name": "Setup Drinks",
-        "project_id": "2",
-        "task_owner_id": "2"
+        "name": "Bring Deserts",
+        "project_id": "1"
     },
     {
         "name": "Decorate the room",
-        "project_id": "2",
-        "task_owner_id": "3"
+        "project_id": "1"
     }
 ]
