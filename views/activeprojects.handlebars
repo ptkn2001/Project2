@@ -1,4 +1,4 @@
-<div class="projects">
+<div class="active-projects">
     <div class="projects-header">
         <h2>Active Projects</h2>
     </div>
@@ -15,7 +15,7 @@
                 <h4>{{project.name}}</h4>
                 <p>Event Date: {{format_date project.event_date}}</p>
                 <p>Donation Total: ${{project.event_fund}}</p>
-                <a href="">view event details</a>
+                <button class="project-details" type="button" projectid="{{project.id}}">View event details</button>
             </div>
             <div class="project-item-group">
                 <img src="./image/{{project.event_type}}.png" alt="Event Type Image">
@@ -30,4 +30,4 @@
     </div>
 </div>
 
-<script src="./js/project.js"></script>
+<script src="./js/projects.js"></script>

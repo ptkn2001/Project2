@@ -4,7 +4,6 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async(req, res) => {
     try {
-        console.log(req.body);
 
         const projectData = await Project.create({
             name: req.body.projectName,
@@ -20,7 +19,6 @@ router.post('/', withAuth, async(req, res) => {
         console.error(err);
         res.status(400).json(err);
     }
-
 });
 
 module.exports = router;

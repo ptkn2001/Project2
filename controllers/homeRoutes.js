@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { Project } = require('../models');
+const { User, Project, Task, Contributor } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    console.log(req.session.user_name);
     res.render('homepage', {
         logged_in: req.session.logged_in,
         user_name: req.session.user_name
@@ -20,8 +19,6 @@ router.get('/activeprojects', async(req, res) => {
         });
 
         const projects = projectData.map((project) => project.get({ plain: true }));
-
-        console.log(projects);
 
         res.render('activeprojects', {
             projects,
@@ -70,6 +67,60 @@ router.get('/addnewproject', withAuth, async(req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.get('/projectdetails/:id', async(req, res) => {
+    try {
+
+        const projectData = await Project.findByPk(req.params.id, {
+            include: {
+                model: User
+            },
+        });
+
+        const project = projectData.get({ plain: true });
+
+        const tasksData = await Task.findAll({
+            where: { project_id: req.params.id },
+        })
+
+        let tasks = [];
+
+        if (tasksData) {
+            tasks = tasksData.map((task) => task.get({ plain: true }));
+        }
+
+        const contributorsData = await Contributor.findAll({
+            where: { project_id: req.params.id },
+        })
+
+        let contributors = [];
+
+        if (contributorsData) {
+            contributors = contributorsData.map((contributor) => contributor.get({ plain: true }));
+        }
+
+        console.log(project);
+        res.render('projectDetails', {
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
+            user_name: req.session.user_name,
+            user_email: req.session.user_email,
+            project_id: project.id,
+            project_name: project.name,
+            project_description: project.description,
+            project_organizer_id: project.user.id,
+            project_organizer: project.user.name,
+            project_contact: project.user.email,
+            event_type: project.event_type,
+            event_fund: project.event_fund,
+            tasks,
+            contributors,
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(400).json(err);
     }
 });
 
