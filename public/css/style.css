@@ -32,6 +32,12 @@ a:visited {
     color: inherit;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -194,6 +200,31 @@ main {
     margin-top: 0;
     margin-bottom: 0;
     color: navy;
+}
+
+.project-details-header {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.project-details-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-details-column {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: navy 1px solid;
+}
+
+.project-donate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .social-icons {

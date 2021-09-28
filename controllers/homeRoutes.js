@@ -3,7 +3,6 @@ const { User, Project, Task, Contributor } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    console.log(req.session.user_name);
     res.render('homepage', {
         logged_in: req.session.logged_in,
         user_name: req.session.user_name
@@ -82,9 +81,6 @@ router.get('/projectdetails/:id', async(req, res) => {
 
         const project = projectData.get({ plain: true });
 
-        console.log(project);
-
-
         const tasksData = await Task.findAll({
             where: { project_id: req.params.id },
         })
@@ -105,12 +101,20 @@ router.get('/projectdetails/:id', async(req, res) => {
             contributors = contributorsData.map((contributor) => contributor.get({ plain: true }));
         }
 
+        console.log(project);
         res.render('projectDetails', {
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
+            user_name: req.session.user_name,
+            user_email: req.session.user_email,
             project_id: project.id,
             project_name: project.name,
             project_description: project.description,
+            project_organizer_id: project.user.id,
             project_organizer: project.user.name,
             project_contact: project.user.email,
+            event_type: project.event_type,
+            event_fund: project.event_fund,
             tasks,
             contributors,
         });

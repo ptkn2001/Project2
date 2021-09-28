@@ -1,11 +1,51 @@
-{{#if tasks}}
-<p>Tasks exist.</p>
-{{/if}}
+<div class="project-details">
+    <div class="project-details-header">
+        {{#if logged_in}} {{#if (eq user_id project_organizer_id)}}
+        <button class="add-new-task" type="button" projectid="{{project.id}}">Cancel this event</button> {{else}}
+        <a href="">I would like to contribute</a> {{/if}} {{/if}}
+        <div class="divider"></div>
+    </div>
+    <div class="project-details-body">
+        <div class="project-details-column">
+            <h3>Contributors</h3>
+            <ul>
+                {{#each contributors as |contributor|}}
+                <li>{{contributor.name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="project-details-column">
+            <h3>Description</h3>
+            <p>{{project_description}}</p>
+            <h4>Additional Information</h4>
+            <p>Please contribute to a good cause. You need to sign up for a new account and be logged in to contribute.</p>
+        </div>
+        <div class="project-details-column">
+            <h3>{{project_name}}</h3>
+            <img src="/image/{{event_type}}.png" alt="Event Type Image">
+            <h4>Tasks</h4>
+            <ul>
+                {{#each tasks as |task|}}
+                <li>{{task.name}}</li>
+                {{/each}}
+            </ul>
+            {{#if (eq user_id project_organizer_id)}}
+            <button class="add-new-task" type="button" projectid="{{project.id}}">Add new task</button> {{/if}}
+        </div>
+        <div class="project-details-column">
+            <h4>Address</h4>
+            <img src="/image/map.png" alt="Map Image">
+            <h4>Contact</h4>
+            <p>{{project_organizer}}</p>
+            <p>{{project_contact}}</p>
+            <h4>Donate</h4>
+            <img src="/image/donateprogress.png" alt="Map Image">
+            <div class="project-donate">
+                <p>current: ${{event_fund}}</p>
+                <p>goal: $1000</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-{{#if contributors}}
-<p>Attendees exist.</p>
-{{/if}}
-
-<p>{{project_id}}</p>
-<p>{{roject_name}}</p>
-<p>{{project_description}}</p>
+<script src="./js/projectdetails.js"></script>

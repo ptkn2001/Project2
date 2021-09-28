@@ -4,7 +4,6 @@ const viewProjectDetailsHandler = async(event) => {
     event.preventDefault();
     const projectId = event.currentTarget.attributes['projectid'].value;
 
-    console.log(projectId);
     document.location.replace(`projectDetails/${projectId}`);
 };
 
