@@ -227,6 +227,14 @@ main {
     justify-content: space-between;
 }
 
+.new-task-form {
+    display: none;
+}
+
+.add-new-task {
+    margin-top: 20px;
+}
+
 .social-icons {
     display: flex;
     align-items: center;
