@@ -42,21 +42,28 @@ const addTaskHandler = async(event) => {
 const insertTaskHandler = async(event) => {
     event.preventDefault();
 
-    const projectId = event.currentTarget.attributes['projectid'].value;
+    const project_id = event.currentTarget.attributes['projectid'].value;
+    const name = newTaskInput.value;
 
-    if (projectId && newTaskInput.value) {
+    if (project_id && name) {
 
+        const response = await fetch('/api/tasks', {
+            method: 'POST',
+            body: JSON.stringify({ name, project_id }),
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-        //Need to implement adding to the task table here.
-
-        const liChildEl = document.createElement('li');
-        liChildEl.innerHTML = newTaskInput.value;
-        taskListUl.appendChild(liChildEl);
+        if (response.ok) {
+            const liChildEl = document.createElement('li');
+            liChildEl.innerHTML = newTaskInput.value;
+            taskListUl.appendChild(liChildEl);
+        } else {
+            alert(response.statusText);
+        }
     }
 
     newTaskInput.value = '';
     addTaskForm.style.display = 'none';
-
 };
 
 document
