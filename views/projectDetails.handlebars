@@ -1,7 +1,7 @@
 <div class="project-details">
     <div class="project-details-header">
         {{#if logged_in}} {{#if (eq user_id project_organizer_id)}}
-        <button class="add-new-task" type="button" projectid="{{project.id}}">Cancel this event</button> {{else}}
+        <button class="cancel-event" type="button" projectid="{{project_id}}">Cancel this event</button> {{else}}
         <a href="">I would like to contribute</a> {{/if}} {{/if}}
         <div class="divider"></div>
     </div>
@@ -24,13 +24,18 @@
             <h3>{{project_name}}</h3>
             <img src="/image/{{event_type}}.png" alt="Event Type Image">
             <h4>Tasks</h4>
-            <ul>
+            <ul class="task-list">
                 {{#each tasks as |task|}}
                 <li>{{task.name}}</li>
                 {{/each}}
             </ul>
             {{#if (eq user_id project_organizer_id)}}
-            <button class="add-new-task" type="button" projectid="{{project.id}}">Add new task</button> {{/if}}
+                <div class="new-task-form">
+                    <input type="text" id="new-task-input" name="new-task-input" value="">
+                    <button class="add-task" type="button" projectid="{{project_id}}">OK</button>
+                    <button class="cancel-task" type="button">Cancel</button>
+                </div>
+                <button class="add-new-task" type="button" projectid="{{project_id}}">Add new task</button> {{/if}}
         </div>
         <div class="project-details-column">
             <h4>Address</h4>
@@ -48,4 +53,7 @@
     </div>
 </div>
 
-<script src="./js/projectdetails.js"></script>
+<script src="/js/projectdetails.js"></script>
+
+{{!-- logged_in: req.session.logged_in, user_id: req.session.user_id, user_name: req.session.user_name, user_email: req.session.user_email, project_id: project.id, project_name: project.name, project_description: project.description, project_organizer_id:
+project.user.id, project_organizer: project.user.name, project_contact: project.user.email, event_type: project.event_type, event_fund: project.event_fund, tasks, contributors, --}}

@@ -101,7 +101,6 @@ router.get('/projectdetails/:id', async(req, res) => {
             contributors = contributorsData.map((contributor) => contributor.get({ plain: true }));
         }
 
-        console.log(project);
         res.render('projectDetails', {
             logged_in: req.session.logged_in,
             user_id: req.session.user_id,
