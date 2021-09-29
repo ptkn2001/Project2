@@ -14,6 +14,11 @@ Contributor.init({
         type: DataTypes.TEXT,
         allowNull: false,
     },
+    ammount: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+    },
     project_id: {
         type: DataTypes.INTEGER,
         references: {
