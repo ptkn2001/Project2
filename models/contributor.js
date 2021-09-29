@@ -14,7 +14,7 @@ Contributor.init({
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    ammount: {
+    amount: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,

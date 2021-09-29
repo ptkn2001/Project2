@@ -11,7 +11,7 @@ router.post('/', withAuth, async(req, res) => {
             description: req.body.projectDescription,
             event_date: req.body.projectDate,
             event_type: req.body.eventType,
-            event_fund: 0,
+            event_fund: req.body.eventFund,
             organizer_id: req.session.user_id,
         });
 
