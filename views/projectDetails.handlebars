@@ -2,7 +2,12 @@
     <div class="project-details-header">
         {{#if logged_in}} {{#if (eq user_id project_organizer_id)}}
         <button class="cancel-event" type="button" projectid="{{project_id}}">Cancel this event</button> {{else}}
-        <a href="">I would like to contribute</a> {{/if}} {{/if}}
+        <div class="contribute-form">
+            <p>Thank you for your contribution. Contribution ammount in USD</p>
+            <input type="text" id="contribute-input" name="contribute-input" value="">
+            <button class="add-contribute" type="button" projectid="{{project_id}}">Donate</button>
+        </div>
+         {{/if}} {{/if}}
         <div class="divider"></div>
     </div>
     <div class="project-details-body">

@@ -1,21 +1,26 @@
 [{
         "name": "John Smith",
-        "project_id": "1"
+        "project_id": "1",
+        "amount": "50"
     },
     {
         "name": "Paul Lavere",
-        "project_id": "1"
+        "project_id": "1",
+        "amount": "50"
     },
     {
         "name": "Adam Apple",
-        "project_id": "1"
+        "project_id": "1",
+        "amount": "50"
     },
     {
         "name": "John Smith",
-        "project_id": "2"
+        "project_id": "2",
+        "amount": "50"
     },
     {
         "name": "Paul Lavere",
-        "project_id": "2"
+        "project_id": "2",
+        "amount": "50"
     }
 ]
