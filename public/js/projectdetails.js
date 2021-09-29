@@ -5,6 +5,8 @@ const newTaskInput = document.querySelector('#new-task-input');
 const taskListUl = document.querySelector('.task-list');
 const addContributeButton = document.querySelector('.add-contribute');
 const contributeInput = document.querySelector('#contribute-input');
+const thankYouEl = document.querySelector('#thank-you');
+// thankYouEl.innerHTML = '';
 
 const deleteProjectHandler = async(event) => {
     event.preventDefault();
@@ -83,7 +85,7 @@ const insertContributeHandler = async(event) => {
         });
 
         if (response.ok) {
-            alert(`Thank you ${name} for your generous donation!`);
+            thankYouEl.innerHTML = `Thank you <strong>${name}</strong> for your generous donation!`;
             contributeInput.value = '';
             document.location.replace(`/projectDetails/${project_id}`);
         } else {

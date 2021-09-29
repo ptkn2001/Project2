@@ -23,6 +23,11 @@ const addNewProjectHandler = async(event) => {
     }
 };
 
+$("#project-date").on('click', function() {
+    $("#project-date").datepicker();
+    $("#project-date").datepicker("show");
+});
+
 document
     .querySelector('.new-project-form')
     .addEventListener('submit', addNewProjectHandler);

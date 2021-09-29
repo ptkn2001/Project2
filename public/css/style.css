@@ -242,6 +242,10 @@ main {
     background-color: none;
 }
 
+#thank-you {
+    color: green;
+}
+
 .social-icons img {
     width: 25px;
     height: 25px;
