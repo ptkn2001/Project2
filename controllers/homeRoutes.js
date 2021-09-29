@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Project, Task, Contributor } = require('../models');
 const withAuth = require('../utils/auth');
 
+//this route renders the home page for the site.
 router.get('/', (req, res) => {
     res.render('homepage', {
         logged_in: req.session.logged_in,
@@ -10,6 +11,7 @@ router.get('/', (req, res) => {
 
 });
 
+//this route renders all the projects in the database regardless if the user login or not.
 router.get('/activeprojects', async(req, res) => {
     try {
         const projectData = await Project.findAll({
@@ -32,6 +34,7 @@ router.get('/activeprojects', async(req, res) => {
     }
 });
 
+//this routes renders all the projects belong to the logged in user.
 router.get('/myprojects', withAuth, async(req, res) => {
     try {
         const projectData = await Project.findAll({
@@ -57,6 +60,7 @@ router.get('/myprojects', withAuth, async(req, res) => {
     }
 });
 
+//this route renders the add new project form.
 router.get('/addnewproject', withAuth, async(req, res) => {
     try {
         res.render('newproject', {
@@ -70,6 +74,7 @@ router.get('/addnewproject', withAuth, async(req, res) => {
     }
 });
 
+//this route renders the project detail for a give project id.
 router.get('/projectdetails/:id', async(req, res) => {
     try {
 
@@ -123,6 +128,7 @@ router.get('/projectdetails/:id', async(req, res) => {
     }
 });
 
+//this route renders the login form.
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -132,6 +138,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//this route renders the signup form.
 router.get('/signup', (req, res) => res.render('signup'));
 
 module.exports = router;

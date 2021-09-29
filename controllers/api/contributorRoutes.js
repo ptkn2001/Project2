@@ -4,13 +4,37 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async(req, res) => {
     try {
-        const contributorData = await Contributor.create({
-            name: req.body.name,
-            project_id: req.body.project_id,
-            amount: req.body.amount,
-        });
+        //first check to see if the contributor already contribute to this project.
+        let contributorData = await Contributor.findOne({
+            where: {
+                name: req.body.name,
+                project_id: req.body.project_id,
+            }
+        })
 
-        res.status(200).json(contributorData);
+        //if the contributor already contributed to the project, we just add the new contribution to the total amount.
+        //else we create a new contributor record.
+        if (contributorData) {
+            const currentContributor = contributorData.get({ plain: true });
+            const contributorId = currentContributor.id;
+            const currentAmount = currentContributor.amount;
+
+            contributorData = await Contributor.update({
+                amount: currentAmount + req.body.amount,
+            }, {
+                where: {
+                    id: contributorId,
+                },
+            });
+            res.status(204).json({ contributorData });
+        } else {
+            contributorData = await Contributor.create({
+                name: req.body.name,
+                project_id: req.body.project_id,
+                amount: req.body.amount,
+            });
+            res.status(200).json(contributorData);
+        }
     } catch (err) {
         console.error(err);
         res.status(400).json(err);
