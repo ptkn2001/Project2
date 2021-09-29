@@ -18,9 +18,10 @@ router.post('/', withAuth, async(req, res) => {
             const currentContributor = contributorData.get({ plain: true });
             const contributorId = currentContributor.id;
             const currentAmount = currentContributor.amount;
+            const newAmount = parseInt(currentAmount) + parseInt(req.body.amount);
 
             contributorData = await Contributor.update({
-                amount: currentAmount + req.body.amount,
+                amount: newAmount,
             }, {
                 where: {
                     id: contributorId,

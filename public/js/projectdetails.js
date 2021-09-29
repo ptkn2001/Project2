@@ -5,8 +5,8 @@ const newTaskInput = document.querySelector('#new-task-input');
 const taskListUl = document.querySelector('.task-list');
 const addContributeButton = document.querySelector('.add-contribute');
 const contributeInput = document.querySelector('#contribute-input');
+const contributionListUl = document.querySelector('.contribution-list');
 const thankYouEl = document.querySelector('#thank-you');
-// thankYouEl.innerHTML = '';
 
 const deleteProjectHandler = async(event) => {
     event.preventDefault();
@@ -58,9 +58,11 @@ const insertTaskHandler = async(event) => {
         });
 
         if (response.ok) {
-            const liChildEl = document.createElement('li');
-            liChildEl.innerHTML = newTaskInput.value;
-            taskListUl.appendChild(liChildEl);
+            if (response.status === 200) {
+                const liChildEl = document.createElement('li');
+                liChildEl.innerHTML = newTaskInput.value;
+                taskListUl.appendChild(liChildEl);
+            }
         } else {
             alert(response.statusText);
         }
@@ -85,14 +87,17 @@ const insertContributeHandler = async(event) => {
         });
 
         if (response.ok) {
-            thankYouEl.innerHTML = `Thank you <strong>${name}</strong> for your generous donation!`;
-            contributeInput.value = '';
-            document.location.replace(`/projectDetails/${project_id}`);
+            if (response.status === 200) {
+                const liChildEl = document.createElement('li');
+                liChildEl.innerHTML = name;
+                contributionListUl.appendChild(liChildEl);
+            }
+            thankYouEl.innerHTML = `Thank you <strong>${name}</strong> for your generous donation! $${contributeInput.value} goes a long way.`;
         } else {
             alert(response.statusText);
-            contributeInput.value = '';
         }
     }
+    contributeInput.value = '';
 };
 
 const cancelEventEl = document.querySelector('.cancel-event');

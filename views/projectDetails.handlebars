@@ -14,7 +14,7 @@
     <div class="project-details-body">
         <div class="project-details-column">
             <h3>Contributors</h3>
-            <ul>
+            <ul class="contribution-list">
                 {{#each contributors as |contributor|}}
                 <li>{{contributor.name}}</li>
                 {{/each}}
@@ -52,8 +52,8 @@
             <h4>Donate</h4>
             <img src="/image/donateprogress.png" alt="Map Image">
             <div class="project-donate">
-                <p>current: ${{event_fund}}</p>
-                <p>goal: $1000</p>
+                <p>current: ${{contributedTotal contributors}}</p>
+                <p>goal: ${{event_fund}}</p>
             </div>
         </div>
     </div>
