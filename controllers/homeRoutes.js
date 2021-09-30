@@ -119,6 +119,7 @@ router.get('/projectdetails/:id', async(req, res) => {
             project_contact: project.user.email,
             event_type: project.event_type,
             event_fund: project.event_fund,
+            event_location: project.event_location,
             tasks,
             contributors,
         });

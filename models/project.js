@@ -22,6 +22,10 @@ Project.init({
         type: DataTypes.DATE,
         allowNull: false,
     },
+    event_location: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     event_fund: {
         type: DataTypes.INTEGER,
         allowNull: false,

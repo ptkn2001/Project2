@@ -10,6 +10,7 @@ router.post('/', withAuth, async(req, res) => {
             name: req.body.projectName,
             description: req.body.projectDescription,
             event_date: req.body.projectDate,
+            event_location: req.body.eventLocation,
             event_type: req.body.eventType,
             event_fund: req.body.eventFund,
             organizer_id: req.session.user_id,
