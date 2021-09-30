@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../models');
 const withAuth = require('../utils/auth');
 
+//Working items
 router.get('/', (req, res) => {
     console.log(req.session.user_name);
     res.render('homepage', {

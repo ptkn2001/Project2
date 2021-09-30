@@ -1,10 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+//Create user in database
 router.post('/', async(req, res) => {
     try {
-        const userData = await User.create(req.body);
-
+        //console.log(req.body);
+        const userData= await User.findOne({ where: { email: req.body.email } });
+        if(!userData){
+            userData = await User.create(req.body);
+       }
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
@@ -16,7 +21,10 @@ router.post('/', async(req, res) => {
     }
 });
 
+
+//Login verification
 router.post('/login', async(req, res) => {
+
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -48,8 +56,11 @@ router.post('/login', async(req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+
 });
 
+
+//Logout
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
