@@ -8,12 +8,13 @@ const addNewProjectHandler = async(event) => {
     const projectDate = document.querySelector('#project-date').value.trim();
     const eventFund = document.querySelector('#project-fund-goal').value.trim();
     const eventType = document.querySelector('#event-type').value.trim();
+    const eventLocation = document.querySelector('#project-location').value.trim();
 
     if (projectName && projectDescription && projectDate && eventType) {
         // Send a POST request to the API endpoint
         const response = await fetch('/api/projects', {
             method: 'POST',
-            body: JSON.stringify({ projectName, projectDescription, projectDate, eventFund, eventType }),
+            body: JSON.stringify({ projectName, projectDescription, projectDate, eventLocation, eventFund, eventType }),
             headers: { 'Content-Type': 'application/json' },
         });
 
