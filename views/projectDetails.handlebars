@@ -1,1 +1,65 @@
-<h2>Project Details to be implemented...</h2>
+<div class="project-details">
+    <div class="project-details-header">
+        {{#if logged_in}} {{#if (eq user_id project_organizer_id)}}
+        <button class="cancel-event" type="button" projectid="{{project_id}}">Cancel this event</button> {{else}}
+        <div class="contribute-form">
+            <p>Contribution amount in USD</p>
+            <input type="text" id="contribute-input" name="contribute-input" value="">
+            <button class="add-contribute" type="button" projectid="{{project_id}}">Donate</button>
+            <p id="thank-you"></p>
+        </div>
+         {{/if}} {{/if}}
+        <div class="divider"></div>
+    </div>
+    <div class="project-details-body">
+        <div class="project-details-column">
+            <h3>Contributors</h3>
+            <ul class="contribution-list">
+                {{#each contributors as |contributor|}}
+                <li>{{contributor.name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="project-details-column">
+            <h3>Description</h3>
+            <p>{{project_description}}</p>
+            <h4>Additional Information</h4>
+            <p>Please contribute to a good cause. You need to sign up for a new account and be logged in to contribute.</p>
+        </div>
+        <div class="project-details-column">
+            <h3>{{project_name}}</h3>
+            <img src="/image/{{event_type}}.png" alt="Event Type Image">
+            <h4>Tasks</h4>
+            <ul class="task-list">
+                {{#each tasks as |task|}}
+                <li>{{task.name}}</li>
+                {{/each}}
+            </ul>
+            {{#if (eq user_id project_organizer_id)}}
+                <div class="new-task-form">
+                    <input type="text" id="new-task-input" name="new-task-input" value="">
+                    <button class="add-task" type="button" projectid="{{project_id}}">OK</button>
+                    <button class="cancel-task" type="button">Cancel</button>
+                </div>
+                <button class="add-new-task" type="button" projectid="{{project_id}}">Add new task</button> {{/if}}
+        </div>
+        <div class="project-details-column">
+            <h4>Address</h4>
+            <img src="/image/map.png" alt="Map Image">
+            <h4>Contact</h4>
+            <p>{{project_organizer}}</p>
+            <p>{{project_contact}}</p>
+            <h4>Donate</h4>
+            <img src="/image/donateprogress.png" alt="Map Image">
+            <div class="project-donate">
+                <p>current: ${{contributedTotal contributors}}</p>
+                <p>goal: ${{event_fund}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/projectdetails.js"></script>
+
+{{!-- logged_in: req.session.logged_in, user_id: req.session.user_id, user_name: req.session.user_name, user_email: req.session.user_email, project_id: project.id, project_name: project.name, project_description: project.description, project_organizer_id:
+project.user.id, project_organizer: project.user.name, project_contact: project.user.email, event_type: project.event_type, event_fund: project.event_fund, tasks, contributors, --}}

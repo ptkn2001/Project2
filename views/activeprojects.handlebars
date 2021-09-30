@@ -1,1 +1,33 @@
-<h2>Active Projects page to be implemented...</h2>
+<div class="active-projects">
+    <div class="projects-header">
+        <h2>Active Projects</h2>
+    </div>
+    <div class="divider"></div>
+    <div class="projects-body">
+        <div class="project-info">
+            <img src="./image/calendar.png" alt="Calendar Image">
+            <p>Be apart of a great cause and signup for your free account and start to contribute to one of many great events. Click on view event details from the list of projects for more information.</p>
+        </div>
+        <div class="project-list">
+        {{#each projects as |project|}}
+        <div class="project">
+            <div class="project-item-group">
+                <h4>{{project.name}}</h4>
+                <p>Event Date: {{format_date project.event_date}}</p>
+                <p>Donation Goal: ${{project.event_fund}}</p>
+                <button class="project-details" type="button" projectid="{{project.id}}">View event details</button>
+            </div>
+            <div class="project-item-group">
+                <img src="./image/{{project.event_type}}.png" alt="Event Type Image">
+            </div>
+            <div class="project-item-group">
+                <p>{{project.description}}</p>
+            </div>  
+        </div>
+        <div class="divider"></div>
+        {{/each}}
+        </div>
+    </div>
+</div>
+
+<script src="./js/projects.js"></script>

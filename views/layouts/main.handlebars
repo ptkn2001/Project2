@@ -9,34 +9,41 @@
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Non-Profit Events Management System</h1>
     </header>
     <nav>
         <div class="left-side">
-        <a href="/">Home</a>
-        <a href="/activeprojects">Active Projects</a>
-        {{#if logged_in}}
-        <a href="/myprojects">My Projects</a>
-        <a href="/" id="logout">logout</a>
+            <a href="/">Home</a>
+            <a href="/activeprojects">Active Projects</a> {{#if logged_in}}
+            <a href="/myprojects">My Projects</a>
+            <a href="/" id="logout">logout</a>
         </div>
         <div class="right-side">
-        <a id="user_name">Welcome {{user_name}}</a>
+            <a id="user_name">{{user_name}}</a>
         </div>
         {{else}}
         <a href="/login">login</a>
-        
-         
+        </div>
         {{/if}}
     </nav>
     <main>
         {{{body}}}
     </main>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
- 
-
+    <footer class="footer">
+        <div class="divider"></div>
+        <div class="social-icons">
+            <p>Contact us via Facebook, Twitter, or Instagram:</p>
+            <a href="#"><img src="/image/facebook.svg" alt="Facebook icon" /></a>
+            <a href="#"><img src="/image/twitter.svg" alt="Twitter icon" /></a>
+            <a href="#"><img src="/image/instagram.svg" alt="Instagram icon" /></a>
+        </div>
+    </footer>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
+
 </html>

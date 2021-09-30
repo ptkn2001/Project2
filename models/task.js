@@ -21,14 +21,6 @@ Task.init({
             key: 'id',
         },
     },
-    task_owner_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'user',
-            key: 'id',
-        },
-    },
 }, {
     sequelize,
     timestamps: false,
