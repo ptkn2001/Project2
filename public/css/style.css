@@ -49,7 +49,7 @@ img {
 }
 
 .form-input {
-    width: 200px;
+    width: 300px;
 }
 
 
@@ -246,6 +246,10 @@ main {
 
 .column-25 {
     width: 25%;
+}
+
+.column-50 {
+    width: 50%;
 }
 
 .divider {
