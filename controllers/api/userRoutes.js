@@ -37,6 +37,7 @@ router.post('/', async(req, res) => {
 
 //this route verify the user email and password when the user login.
 router.post('/login', async(req, res) => {
+
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -69,6 +70,7 @@ router.post('/login', async(req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+
 });
 
 //this route logout the user.
