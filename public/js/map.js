@@ -1,24 +1,35 @@
 //Google API call back function
 function initMap() {
-    let latitude = 47.597887;
-    let longitude = -122.140214;
+    let latitude = 0;
+    let longitude = 0;
+    let geocoder = new google.maps.Geocoder();
 
-    let eventPosition = {
-        lat: latitude,
-        lng: longitude
-    };
+    const address = document.querySelector('#event-location').innerHTML;
 
-    //Get the map around the restaurant location.
-    let map = new google.maps.Map(document.getElementById("map"), {
-        center: eventPosition,
-        zoom: 8,
-        mapId: '6dbf17a103bba713'
-    });
+    geocoder.geocode({ 'address': address }, (results, status) => {
 
-    //Draw the marker indicate the location of the restaurant on the map.
-    new google.maps.Marker({
-        position: eventPosition,
-        map,
-        title: 'Event location'
+        if (status == google.maps.GeocoderStatus.OK) {
+            latitude = results[0].geometry.location.lat();
+            longitude = results[0].geometry.location.lng();
+
+            let eventPosition = {
+                lat: latitude,
+                lng: longitude
+            };
+
+            //Get the map around the restaurant location.
+            let map = new google.maps.Map(document.getElementById("map"), {
+                center: eventPosition,
+                zoom: 8,
+                mapId: '6dbf17a103bba713'
+            });
+
+            //Draw the marker indicate the location of the restaurant on the map.
+            new google.maps.Marker({
+                position: eventPosition,
+                map,
+                title: 'Event location'
+            });
+        }
     });
 }
