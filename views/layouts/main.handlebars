@@ -6,7 +6,7 @@
 <meta name="google-signin-client_id" content="419240446354-idt4fn3rvoaqdg604eigj8t1b3b45ra4.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Non-Profit EMS</title>
-    <script src="jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
@@ -26,8 +26,9 @@
         </div>
         {{else}}
         <a href="/login">login</a>
-        <a href="/gscript"> Google Sign in</a>
-         </div>
+        <button id="sign-in-or-out-button"
+        style="margin-left: 25px">Sign In/Authorize</button>
+         
          
         {{/if}}
     </nav>
@@ -36,6 +37,10 @@
     </main>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+<!--Google script -->
+
+
+
   {{/if}}
  
 
