@@ -9,102 +9,86 @@
     --border-radius: 0.3rem;
 }
 
-body {
-    font-family: Arial;
-    margin: 0;
+
+/* Headings */
+
+h1 {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+/* common elements */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* form */
+
+.form-group {
+    margin-bottom: 10px;
+    /* margin-left: 20px; */
+}
+
+.form-input {
+    width: 200px;
+}
+
+
+/* Header section */
+
+header {
+    text-align: center;
+    background: var(--primary);
+    color: var(--light);
+    height: auto;
+}
+
+
+/* nav section */
+
+nav {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
+    justify-content: space-between;
+    font-weight: bold;
     background-color: var(--quatrinary);
 }
 
-a {
-    color: var(--dark);
-    padding-left: 10px;
-    padding-right: 10px;
+nav a {
+    font-size: medium;
     text-decoration: none;
-    text-align: center;
-    text-decoration: underline;
-}
-
-a:visited {
-    color: inherit;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-start;
-    margin: 20px;
-}
-
-.form-group {
-    margin-top: 10px;
     margin-left: 20px;
 }
 
-.login-header {
-    margin-left: 20px;
-}
-
-#email-login {
-    margin-left: 30px;
-}
-
-#name-signup,
-#email-signup {
-    margin-left: 30px;
+nav a:hover {
+    color: var(--secondary);
+    background-color: var(--dark);
 }
 
 #sign-in-or-out-button {
     font-size: medium;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: var(--secondary);
+    background-color: var(--quatrinary);
     border: none;
-}
-
-#sign-in-or-out-button,
-#login,
-#logout {
-    font-weight: bold;
-}
-
-.login-signup {
-    margin: 30px 0 0 20px;
-}
-
-.signup h2 {
-    margin-left: 20px;
-}
-
-header {
-    text-align: center;
-    background: var(--primary);
-    color: var(--light);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--secondary);
-}
-
-nav a {
-    font-size: medium;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: var(--secondary);
-    background-color: var(--dark);
 }
 
 #sign-in-or-out-button:hover {
@@ -113,40 +97,72 @@ nav a:hover {
     cursor: pointer;
 }
 
+
+/* main section */
+
 main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.home-description {
-    text-align: center;
+
+/* footer section */
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    background-color: none;
 }
 
-.home-body img {
-    width: 100%;
-    height: auto;
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    margin-left: 25px;
 }
+
+
+/* home page */
+
+
+/* login page */
+
+.login-header {
+    margin-bottom: 20px;
+}
+
+
+/* sign in page */
+
+.sign-up-header {
+    margin-bottom: 20px;
+}
+
+
+/* projects page */
 
 .project {
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
-    margin: 20px;
+}
+
+.projects-header {
+    padding-left: 45%;
 }
 
 .projects-body {
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
-    margin: 20px;
 }
 
 .project-item-group {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin: 20px;
+    margin-right: 10px;
 }
 
 .project-item-group a {
@@ -157,41 +173,13 @@ main {
     text-align: left;
 }
 
-.project-item-group h4 {
-    margin-top: 0;
-}
-
-.projects-header {
-    text-align: center;
-}
-
-.btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 100%;
-    transition: color 0.1s;
-    margin-left: 16px;
+.project-info {
+    width: 25%;
 }
 
 .project-item-group img {
     max-width: 200px;
     height: auto;
-}
-
-.new-project h2 {
-    margin-left: 40px;
-}
-
-#project-description,
-#project-date {
-    margin-left: 15px;
-}
-
-#event-type {
-    margin-left: 10px;
 }
 
 .project-info {
@@ -209,15 +197,12 @@ main {
     margin-bottom: 50px;
 }
 
-.project-info p {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: navy;
-}
+
+/* project details page */
 
 .project-details-header {
-    margin-left: 20px;
-    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .project-details-body {
@@ -234,20 +219,18 @@ main {
     border-right: navy 1px solid;
 }
 
-.contact-header {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.contact {
-    margin-top: 0;
-    margin-bottom: 0;
+.contributor-column {
+    border-left: navy 1px solid;
 }
 
 .project-donate {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.progress {
+    width: 100%;
 }
 
 .new-task-form {
@@ -258,22 +241,8 @@ main {
     margin-top: 20px;
 }
 
-.social-icons {
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    background-color: none;
-}
 
-#thank-you {
-    color: green;
-}
-
-.social-icons img {
-    width: 25px;
-    height: 25px;
-    margin-left: 25px;
-}
+/* misc */
 
 .divider {
     width: 100%;

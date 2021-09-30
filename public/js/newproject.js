@@ -1,3 +1,5 @@
+const projectDateEl = document.querySelector("#project-date");
+
 const addNewProjectHandler = async(event) => {
     event.preventDefault();
 
@@ -24,7 +26,7 @@ const addNewProjectHandler = async(event) => {
     }
 };
 
-$("#project-date").on('click', function() {
+projectDateEl.addEventListener('click', () => {
     $("#project-date").datepicker();
     $("#project-date").datepicker("show");
 });
