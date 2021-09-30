@@ -19,13 +19,16 @@
             <a href="/">Home</a>
             <a href="/activeprojects">Active Projects</a> {{#if logged_in}}
             <a href="/myprojects">My Projects</a>
-            <a href="/" id="logout">logout</a>
         </div>
         <div class="right-side">
+            <a href="/" id="logout">Sign out</a>
             <a id="user_name">{{user_name}}</a>
-        </div>
+            </div>
         {{else}}
-        <a href="/login">login</a>
+        </div>
+        <div class="right-side">
+        <a href="/login" id="login">Sign in with user account</a>
+        <button id="sign-in-or-out-button">Sign in with Google</button>
         </div>
         {{/if}}
     </nav>
@@ -44,6 +47,12 @@
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="./js/gscript.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 
 </html>
