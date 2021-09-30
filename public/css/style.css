@@ -64,7 +64,17 @@ ul {
 }
 
 #sign-in-or-out-button {
-    margin-left: 25px;
+    font-size: medium;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: var(--secondary);
+    border: none;
+}
+
+#sign-in-or-out-button,
+#login,
+#logout {
+    font-weight: bold;
 }
 
 .login-signup {
@@ -88,12 +98,19 @@ nav {
 }
 
 nav a {
+    font-size: medium;
     text-decoration: none;
 }
 
 nav a:hover {
     color: var(--secondary);
     background-color: var(--dark);
+}
+
+#sign-in-or-out-button:hover {
+    color: var(--secondary);
+    background-color: var(--dark);
+    cursor: pointer;
 }
 
 main {
@@ -104,14 +121,6 @@ main {
 
 .home-description {
     text-align: center;
-}
-
-.home-description h4 {
-    color: red;
-}
-
-.home-description p {
-    color: green;
 }
 
 .home-body img {
