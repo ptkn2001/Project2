@@ -234,6 +234,16 @@ main {
     border-right: navy 1px solid;
 }
 
+.contact-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contact {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .project-donate {
     display: flex;
     flex-direction: row;
