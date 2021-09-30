@@ -67,7 +67,7 @@ router.get('/addnewproject', withAuth, async(req, res) => {
             logged_in: req.session.logged_in,
             user_id: req.session.user_id,
             user_name: req.session.user_name,
-            user_name: req.session.user_email
+            user_email: req.session.user_email
         });
     } catch (err) {
         res.status(500).json(err);
