@@ -12,7 +12,7 @@
     </div>
     <div class="divider"></div>
     <div class="project-details-body">
-        <div class="project-details-column contributor-column">
+        <div class="project-details-column contributor-column column-15">
             <h3 class="project-details-header">Contributors</h3>
             <ul class="contribution-list">
                 {{#each contributors as |contributor|}}
@@ -20,14 +20,14 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="project-details-column">
+        <div class="project-details-column column-35">
             <h3 class="project-details-header" >Description</h3>
             <p>{{project_description}}</p>
             <h4 class="project-details-header">Event Location</h4>
             <p id="event-location">{{event_location}}</p>
             <div class="map" id="map" style="width:100%;height:100%;"></div>
         </div>
-        <div class="project-details-column">
+        <div class="project-details-column column-25">
             <h3 class="project-details-header">{{project_name}}</h3>
             <img src="/image/{{event_type}}.png" alt="Event Type Image">
             <h4 class="project-details-header">Tasks</h4>
