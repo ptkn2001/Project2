@@ -8,7 +8,7 @@
     <title>Non-Profit EMS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,19 +24,18 @@
         <div class="right-side">
             <a href="/" id="logout">Sign out</a>
             <a id="user_name">{{user_name}}</a>
-            </div>
+        </div>
         {{else}}
         </div>
         <div class="right-side">
-        <a href="/login" id="login">Sign in</a>
-        <a id="sign-in-or-out-button">Sign in with Google</a>
+            <a href="/login" id="login">Sign in</a>
+            <a id="sign-in-or-out-button">Sign in with Google</a>
         </div>
         {{/if}}
     </nav>
     <main>
         {{{body}}}
     </main>
-    <div class="divider"></div>
     <footer class="footer">
         <div class="social-icons">
             <p>Contact us via Facebook, Twitter, or Instagram:</p>
@@ -50,12 +49,10 @@
     {{/if}}
     <script src="/js/gscript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js"
-        onload="this.onload=function(){};handleClientLoad()"
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 </body>
 
 </html>

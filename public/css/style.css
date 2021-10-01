@@ -9,6 +9,12 @@
     --border-radius: 0.3rem;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
 
 /* Headings */
 
@@ -104,10 +110,16 @@ main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    min-height: 100%;
 }
 
 
 /* footer section */
+
+.footer {
+    height: 50px;
+    background-color: var(--quatrinary);
+}
 
 .social-icons {
     display: flex;
@@ -156,6 +168,13 @@ main {
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
+    overscroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+.project-details-body {
+    overscroll-behavior: auto;
+    overflow-y: scroll;
 }
 
 .project-item-group {
