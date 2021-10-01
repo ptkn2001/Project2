@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/connection');
-const { User, Project, Task } = require('../models');
+const { User, Project, Task, Contributor } = require('../models');
 const userData = require('./userData.json');
 const projectData = require('./projectData.json');
 const taskData = require('./taskData.json');
+const contributorData = require('./contributorData.json');
 
 const createDatabase = async() => {
     const config = sequelize.config;
@@ -13,7 +14,7 @@ const createDatabase = async() => {
 };
 
 const seedDatabase = async() => {
-    //await createDatabase();
+   // await createDatabase();
     await sequelize.sync({ force: true });
     await User.bulkCreate(userData, {
         individualHooks: true,
@@ -21,6 +22,7 @@ const seedDatabase = async() => {
     });
     await Project.bulkCreate(projectData);
     await Task.bulkCreate(taskData);
+    await Contributor.bulkCreate(contributorData);
     process.exit(0);
 };
 

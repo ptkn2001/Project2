@@ -1,1 +1,63 @@
-<h2>Project Details to be implemented...</h2>
+<div class="project-details section">
+    <div class="project-details-header">
+        {{#if logged_in}} {{#if (eq user_id project_organizer_id)}}
+        <button class="cancel-event" type="button" projectid="{{project_id}}">Cancel this event</button> {{else}}
+        <div class="contribute-form">
+            <p>Contribution amount in USD</p>
+            <input type="text" id="contribute-input" name="contribute-input" value="">
+            <button class="add-contribute" type="button" projectid="{{project_id}}">Donate</button>
+            <p id="thank-you"></p>
+        </div>
+         {{/if}} {{/if}}
+    </div>
+    <div class="divider"></div>
+    <div class="project-details-body">
+        <div class="project-details-column contributor-column">
+            <h3 class="project-details-header">Contributors</h3>
+            <ul class="contribution-list">
+                {{#each contributors as |contributor|}}
+                <li>{{contributor.name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="project-details-column">
+            <h3 class="project-details-header" >Description</h3>
+            <p>{{project_description}}</p>
+            <h4 class="project-details-header">Event Location</h4>
+            <p id="event-location">{{event_location}}</p>
+            <div class="map" id="map" style="width:100%;height:100%;"></div>
+        </div>
+        <div class="project-details-column">
+            <h3 class="project-details-header">{{project_name}}</h3>
+            <img src="/image/{{event_type}}.png" alt="Event Type Image">
+            <h4 class="project-details-header">Tasks</h4>
+            <ul class="task-list">
+                {{#each tasks as |task|}}
+                <li>{{task.name}}</li>
+                {{/each}}
+            </ul>
+            {{#if (eq user_id project_organizer_id)}}
+                <div class="new-task-form">
+                    <input type="text" id="new-task-input" name="new-task-input" value="">
+                    <button class="add-task" type="button" projectid="{{project_id}}">OK</button>
+                    <button class="cancel-task" type="button">Cancel</button>
+                </div>
+                <button class="add-new-task" type="button" projectid="{{project_id}}">Add new task</button> {{/if}}
+        </div>
+        <div class="project-details-column column-25">
+            <h3 class="project-details-header">Contact</h3>
+            <p class="contact">{{project_organizer}}</p>
+            <p class="contact">{{project_contact}}</p>
+            <h4 class="project-details-header">Donate</h4>
+            <progress class="progress is-info" value="{{contributedTotal contributors}}" max="{{event_fund}}">0%</progress>
+            <div class="project-donate">
+                <p>current: ${{contributedTotal contributors}}</p>
+                <p>goal: ${{event_fund}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/map.js"></script>
+<script src="/js/projectdetails.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA51EA8ocFj-7sqx78LGYN4BywXlsdyrsQ&map_ids=6dbf17a103bba713&callback=initMap"></script>

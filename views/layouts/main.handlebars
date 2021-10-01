@@ -3,41 +3,58 @@
 
 <head>
     <meta charset="utf-8">
-<meta name="google-signin-client_id" content="419240446354-idt4fn3rvoaqdg604eigj8t1b3b45ra4.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="419240446354-idt4fn3rvoaqdg604eigj8t1b3b45ra4.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Non-Profit EMS</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">   
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
 </head>
+
 <body>
     <header>
         <h1>Non-Profit Events Management System</h1>
     </header>
     <nav>
         <div class="left-side">
-        <a href="/">Home</a>
-        <a href="/activeprojects">Active Projects</a>
-        {{#if logged_in}}
-        <a href="/myprojects">My Projects</a>
-        <a href="/" id="logout">logout</a>
+            <a href="/">Home</a>
+            <a href="/activeprojects">Active Projects</a> {{#if logged_in}}
+            <a href="/myprojects">My Projects</a>
         </div>
         <div class="right-side">
-        <a id="user_name">Welcome {{user_name}}</a>
-        </div>
+            <a href="/" id="logout">Sign out</a>
+            <a id="user_name">{{user_name}}</a>
+            </div>
         {{else}}
-        <a href="/login">login</a>
-        
-         
+        </div>
+        <div class="right-side">
+        <a href="/login" id="login">Sign in</a>
+        </div>
         {{/if}}
     </nav>
     <main>
         {{{body}}}
     </main>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
- 
-
+    <div class="divider"></div>
+    <footer class="footer">
+        <div class="social-icons">
+            <p>Contact us via Facebook, Twitter, or Instagram:</p>
+            <a href="#"><img src="/image/facebook.svg" alt="Facebook icon" /></a>
+            <a href="#"><img src="/image/twitter.svg" alt="Twitter icon" /></a>
+            <a href="#"><img src="/image/instagram.svg" alt="Instagram icon" /></a>
+        </div>
+    </footer>
+    {{#if logged_in}}
+    
+    <script src="/js/logout.js"></script>
+    {{/if}}
+   <!--  <script src="/js/gscript.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') {this.onload();}">
+    </script>
+    -->
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 </body>
-</html>
