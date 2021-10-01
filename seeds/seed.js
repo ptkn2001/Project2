@@ -21,8 +21,8 @@ const seedDatabase = async() => {
         returning: true,
     });
     await Project.bulkCreate(projectData);
-    // await Task.bulkCreate(taskData);
-    // await Contributor.bulkCreate(contributorData);
+    await Task.bulkCreate(taskData);
+    await Contributor.bulkCreate(contributorData);
     process.exit(0);
 };
 

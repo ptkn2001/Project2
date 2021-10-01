@@ -5,7 +5,7 @@
         "event_location": "One Microsoft Way Redmond Wa 98052",
         "event_fund": "400",
         "event_type": "Event",
-        "organizer_id": "5"
+        "organizer_id": "1"
     },
     {
         "name": "Christmas Party",
@@ -14,6 +14,6 @@
         "event_location": "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
         "event_fund": "500",
         "event_type": "Party",
-        "organizer_id": "15"
+        "organizer_id": "1"
     }
 ]
