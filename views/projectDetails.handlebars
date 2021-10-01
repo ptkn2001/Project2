@@ -1,14 +1,8 @@
 <div class="project-details section">
     <div class="project-details-header">
-        {{#if logged_in}} {{#if (eq user_id project_organizer_id)}}
-        <button class="cancel-event" type="button" projectid="{{project_id}}">Cancel this event</button> {{else}}
-        <div class="contribute-form">
-            <p>Contribution amount in USD</p>
-            <input type="text" id="contribute-input" name="contribute-input" value="">
-            <button class="add-contribute" type="button" projectid="{{project_id}}">Donate</button>
-            <p id="thank-you"></p>
-        </div>
-         {{/if}} {{/if}}
+        {{#if (eq user_id project_organizer_id)}}
+        <button class="cancel-event" type="button" projectid="{{project_id}}">Cancel this event</button>
+         {{/if}}
     </div>
     <div class="divider"></div>
     <div class="project-details-body">
@@ -49,6 +43,14 @@
             <p class="contact">{{project_organizer}}</p>
             <p class="contact">{{project_contact}}</p>
             <h4 class="project-details-header">Donate</h4>
+            {{#if logged_in}}
+            <div class="contribute-form">
+                <p>Contribution amount in USD</p>
+                <input type="text" id="contribute-input" name="contribute-input" value="">
+                <button class="add-contribute" type="button" projectid="{{project_id}}">Donate</button>
+            </div>
+            <br>
+            {{/if}}
             <progress class="progress is-info" value="{{contributedTotal contributors}}" max="{{event_fund}}">0%</progress>
             <div class="project-donate">
                 <p>current: ${{contributedTotal contributors}}</p>
