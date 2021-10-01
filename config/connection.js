@@ -6,8 +6,7 @@ const sequelize = new Sequelize(
     'b18dcf67053d5e',
     '6a2c6346', {
         host: 'us-cdbr-east-04.cleardb.com',
-        dialect: 'mysql',
-        port: 3306
+        dialect: 'mysql'
     }
 );
 
