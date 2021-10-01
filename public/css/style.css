@@ -165,14 +165,6 @@ main {
     margin-right: 10px;
 }
 
-.project-item-group a {
-    color: var(--dark);
-    margin-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: left;
-}
-
 .project-info {
     width: 25%;
 }
@@ -246,6 +238,14 @@ main {
 
 .column-25 {
     width: 25%;
+}
+
+.column-25 {
+    width: 25%;
+}
+
+.column-35 {
+    width: 35%;
 }
 
 .column-50 {
