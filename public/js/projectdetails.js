@@ -73,8 +73,13 @@ const insertTaskHandler = async(event) => {
 const insertContributeHandler = async(event) => {
     event.preventDefault();
 
-    const project_id = event.currentTarget.attributes['projectid'].value;
     const amount = contributeInput.value;
+    if (!parseInt(amount)) {
+        alert('Please Enter Correct Amount. For example: 25 or 100');
+        return;
+    }
+
+    const project_id = event.currentTarget.attributes['projectid'].value;
     const name = document.querySelector('#user_name').innerText.trim();
 
     if (project_id && name && amount) {
