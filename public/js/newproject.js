@@ -1,5 +1,14 @@
 const projectDateEl = document.querySelector("#project-date");
 
+const isAmountValid = (amount) => {
+    if (!parseInt(amount)) {
+        alert('Please Enter Correct Amount. For example: 25 or 100');
+        return false;
+    } else {
+        return true;
+    }
+}
+
 const addNewProjectHandler = async(event) => {
     event.preventDefault();
 
@@ -9,6 +18,8 @@ const addNewProjectHandler = async(event) => {
     const eventFund = document.querySelector('#project-fund-goal').value.trim();
     const eventType = document.querySelector('#event-type').value.trim();
     const eventLocation = document.querySelector('#project-location').value.trim();
+
+    if (!isAmountValid(eventFund)) return;
 
     if (projectName && projectDescription && projectDate && eventType) {
         // Send a POST request to the API endpoint
@@ -24,6 +35,9 @@ const addNewProjectHandler = async(event) => {
         } else {
             alert(response.statusText);
         }
+    } else {
+        alert('One or more fields are missing or empty. Please correct and try again.');
+        return;
     }
 };
 
