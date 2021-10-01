@@ -54,6 +54,7 @@ router.get('/myprojects', withAuth, async(req, res) => {
             user_id: req.session.user_id,
             user_name: req.session.user_name,
             user_email: req.session.user_email
+<<<<<<< HEAD
         });}
         else{
             res
@@ -74,12 +75,31 @@ router.get('/addnewproject', withAuth, async(req, res) => {
             user_id: req.session.user_id,
             user_name: req.session.user_name,
             user_email: req.session.user_email
+=======
+>>>>>>> master
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
+<<<<<<< HEAD
+=======
+//this route renders the add new project form.
+router.get('/addnewproject', withAuth, async(req, res) => {
+    try {
+        res.render('newproject', {
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
+            user_name: req.session.user_name,
+            user_email: req.session.user_email
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+>>>>>>> master
 //this route renders the project detail for a give project id.
 router.get('/projectdetails/:id', async(req, res) => {
     try {

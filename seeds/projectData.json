@@ -14,6 +14,10 @@
         "event_location": "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
         "event_fund": "500",
         "event_type": "Party",
+<<<<<<< HEAD
         "organizer_id": "2"
+=======
+        "organizer_id": "1"
+>>>>>>> master
     }
 ]
