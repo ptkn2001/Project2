@@ -104,9 +104,12 @@ nav a:hover {
 }
 
 #sign-in-or-out-button {
-    font-size: medium;
-    background-color: var(--quatrinary);
-    border: none;
+    font-size: large;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: black solid 1px;
+    border-radius: 1em;
+    color: #51da2f
 }
 
 #sign-in-or-out-button:hover {
