@@ -68,6 +68,12 @@ header {
     height: auto;
 }
 
+.hello h3 {
+    display: flex;
+    flex-direction: row;
+    color: var(--primary);
+}
+
 
 /* nav section */
 
@@ -276,4 +282,10 @@ main {
     height: 3px;
     border-top: 1px rgb(78, 74, 134) solid;
     margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+    .small-device-hidden {
+        display: none;
+    }
 }
