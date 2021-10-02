@@ -68,6 +68,10 @@ header {
     height: auto;
 }
 
+userLogin {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 
 /* nav section */
 
@@ -76,6 +80,14 @@ nav {
     justify-content: space-between;
     font-weight: bold;
     background-color: var(--quatrinary);
+}
+
+.nav {
+    animation: fadeIn linear 2s;
+    -webkit-animation: fadeIn linear 2s;
+    -moz-animation: fadeIn linear 2s;
+    -o-animation: fadeIn linear 2s;
+    -ms-animation: fadeIn linear 2s;
 }
 
 nav a {
@@ -111,13 +123,87 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     min-height: 100%;
+    background-image: url(https://images.freecreatives.com/wp-content/uploads/2015/04/white-paper-texture-with-flecks.jpg);
+    background: url('https://images.freecreatives.com/wp-content/uploads/2015/04/white-linen-paper-texture.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+.titleBulletin {
+    font-size: 4vw;
+    font-family: 'Times New Roman', Times, serif;
+    animation: fadeIn linear 1s;
+    -webkit-animation: fadeIn linear 1s;
+    -moz-animation: fadeIn linear 1s;
+    -o-animation: fadeIn linear 1s;
+    -ms-animation: fadeIn linear 1s;
+}
+
+
+/* KEYFRAMSE ANIMATION*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.bulletin {
+    background-image: url(https://images.freecreatives.com/wp-content/uploads/2015/04/white-paper-texture-with-flecks.jpg);
+    background: url('https://images.freecreatives.com/wp-content/uploads/2015/04/white-linen-paper-texture.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
 /* footer section */
 
 .footer {
-    height: 50px;
+    background-image: url(https://images.freecreatives.com/wp-content/uploads/2015/04/white-paper-texture-with-flecks.jpg);
+    background: url('https://images.freecreatives.com/wp-content/uploads/2015/04/white-linen-paper-texture.jpg') no-repeat center fixed;
+    background-size: cover;
 }
 
 .social-icons {
@@ -136,6 +222,33 @@ main {
 
 /* home page */
 
+.details {
+    transform: rotate(4deg);
+    background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFwZXIlMjB0ZXh0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+    background-size: cover;
+    /*  box-shadow: 10px 10px 5px grey;  */
+}
+
+.about-me {
+    transform: rotate(-2deg);
+    background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFwZXIlMjB0ZXh0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+    background-size: cover;
+}
+
+.home {
+    background-image: url("homeBackground.jpg");
+    background-size: cover;
+    box-shadow: 0 0 3px 0px white inset;
+}
+
+.featureDescription {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.signUp {
+    transform: rotate(2deg);
+}
+
 
 /* login page */
 
@@ -148,6 +261,10 @@ main {
 
 .sign-up-header {
     margin-bottom: 20px;
+}
+
+.loginpage {
+    background-image: url("homeBackground.jpg")
 }
 
 

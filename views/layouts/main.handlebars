@@ -11,27 +11,44 @@
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <h1>Non-Profit Events Management System</h1>
-    </header>
-    <nav>
-        <div class="left-side">
-            <a href="/">Home</a>
-            <a href="/activeprojects">Projects</a> {{#if logged_in}}
-            <a href="/myprojects">My Projects</a>
-        </div>
-        <div class="right-side">
-            <a href="/" id="logout">Sign out</a>
-            <a id="user_name">{{user_name}}</a>
-            </div>
-        {{else}}
-        </div>
-        <div class="right-side">
-        <a href="/login" id="login">Sign in</a>
-        </div>
-        {{/if}}
-    </nav>
+<body class="bulletin">
+    <section class=" bulletin section is-small has-background-light pb-0"> 
+         <div class= "y ">
+          <p class= "titleBulletin is-flex is-justify-content-center " >
+              BULLETIN
+          </p>
+
+    </section>
+
+    <section class="nav section is-small">
+            <nav class="is-flex ">
+            
+             <div class=" is-flex is-justify-content-center is-justify-content-space-evenly">
+              <a class ="is-flex subtitle" href="/">Home</a>
+              <a class ="is-flex subtitle" href="/activeprojects"> Active Projects</a> {{#if logged_in}}
+              <a class ="is-flex subtitle" href="/myprojects">My Projects</a>
+             </div>
+          
+              <div>
+                  <a class ="is-flex is-justify-content-end" href="/" id="logout">Sign out </a>
+                  <a class ="is-flex is-justify-content-end"id="user_name"> {{user_name}}</a>
+              </div>
+          {{else}}
+           </div>
+                 <div class="is-flex subtitle is-justify-content-end">
+                 <a class="subtitle  " href="/login" id="login">Sign in</a>
+                 
+                 </div>
+          {{/if}}
+             </nav>
+
+
+
+
+    </section>
+
+
+    <main>
         {{{body}}}
     </main>
     <footer class="footer">
@@ -43,13 +60,11 @@
         </div>
     </footer>
     {{#if logged_in}}
-    
     <script src="/js/logout.js"></script>
     {{/if}}
-
-    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 </body>
-  
 
 </html>
