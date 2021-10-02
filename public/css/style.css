@@ -68,12 +68,6 @@ header {
     height: auto;
 }
 
-.hello h3 {
-    display: flex;
-    flex-direction: row;
-    color: var(--primary);
-}
-
 
 /* nav section */
 
