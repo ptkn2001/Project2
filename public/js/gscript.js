@@ -85,7 +85,7 @@ const setSigninStatus = async(event) => {
         }
 
     } else {
-        $('#sign-in-or-out-button').html('Sign in with <span style="color:blue">G</span><span style="color:red">o</span><span style="color:orange">o</span><span style="color:blue">g</span><span style="color:green">l</span><span style="color:red">e</span>');
+        $('#sign-in-or-out-button').html('<span style="color:blue">G</span><span style="color:red">o</span><span style="color:orange">o</span><span style="color:blue">g</span><span style="color:green">l</span><span style="color:red">e</span>');
         $('#revoke-access-button').css('display', 'none');
         $('#auth-status').html('You have not authorized this app or you are ' +
             'signed out.');
