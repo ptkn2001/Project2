@@ -1,23 +1,23 @@
-<div class="my-projects section">
-    <div class="projects-header">
+<div class="my-projects-page section">
+    <div class="projects-header has-text-light is-small is-flex is-justify-content-center">
         <h2>My Projects</h2>
     </div>
-    <a href="/addnewproject">+Add a new project</a>
+    <a class="has-text-light" href="/addnewproject">+Add a new project</a>
     <div class="my-projects-body">
         {{#each projects as |project|}}
         <div class="divider"></div>
         <div class="project">
             <div class="project-item-group project-info">
-                <h4>{{project.name}}</h4>
-                <p>Event Date: {{format_date project.event_date}}</p>
-                <p>Donation Goal: ${{project.event_fund}}</p>
-                <button class="project-details" type="button" projectid="{{project.id}}">View event details</button>
+                <h4 class="has-text-light">{{project.name}}</h4>
+                <p class="has-text-light">Event Date: {{format_date project.event_date}}</p>
+                <p class="has-text-light">Donation Goal: ${{project.event_fund}}</p>
+                <button class="project-details button" type="button" projectid="{{project.id}}">View event details</button>
             </div>
             <div class="project-item-group">
                 <img src="./image/{{project.event_type}}.png" alt="Event Type Image">
             </div>
             <div class="project-item-group"
-                <p>{{project.description}}</p>
+                <p class="has-text-light">{{project.description}}</p>
             </div>
         </div>
         {{/each}}       

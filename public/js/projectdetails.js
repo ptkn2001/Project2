@@ -59,6 +59,7 @@ const insertTaskHandler = async(event) => {
             if (response.status === 200) {
                 const liChildEl = document.createElement('li');
                 liChildEl.innerHTML = newTaskInput.value;
+                liChildEl.setAttribute("class", "has-text-light");
                 taskListUl.appendChild(liChildEl);
             }
         } else {
