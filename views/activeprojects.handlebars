@@ -1,30 +1,29 @@
-<div class="active-projects section">
-    <div class="projects-header">
+<div class="active-projects-page is-fluid has-background-grey-light">
+    <div class="has-text-light is-flex is-justify-content-center projects-header">
         <h2>Active Projects</h2>
     </div>
-    <div class="divider"></div>
-    <div class="projects-body">
-        <div class="project-info small-device-hidden">
+    <div class="projects-body is-flex">
+        <div class="project-info small-device-hidden column-25">
             <img src="./image/calendar.png" alt="Calendar Image">
-            <p>Be apart of a great cause and signup for your free account and start to contribute to one of many great events. Click on view event details from the list of projects for more information.</p>
+            <p class="has-text-light">Be apart of a great cause and signup for your free account and start to contribute to one of many great events. Click on view event details from the list of projects for more information.</p>
         </div>
         <div class="project-list">
         {{#each projects as |project|}}
+        <div class="divider"></div>
         <div class="project">
-            <div class="project-item-group project-info">
-                <h4>{{project.name}}</h4>
-                <p>Event Date: {{format_date project.event_date}}</p>
-                <p>Donation Goal: ${{project.event_fund}}</p>
-                <button class="project-details" type="button" projectid="{{project.id}}">View event details</button>
+            <div class="project-item-group project-info column-25">
+                <h4 class="has-text-light">{{project.name}}</h4>
+                <p class="has-text-light">Event Date: {{format_date project.event_date}}</p>
+                <p class="has-text-light">Donation Goal: ${{project.event_fund}}</p>
+                <button class="project-details button" type="button" projectid="{{project.id}}">View event details</button>
             </div>
-            <div class="project-item-group">
+            <div class="project-item-group column-15">
                 <img src="./image/{{project.event_type}}.png" alt="Event Type Image">
             </div>
-            <div class="project-item-group">
-                <p>{{project.description}}</p>
+            <div class="project-item-group column-35">
+                <p class="has-text-light project-description">{{project.description}}</p>
             </div>  
         </div>
-        <div class="divider"></div>
         {{/each}}
         </div>
     </div>
