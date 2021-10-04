@@ -232,6 +232,18 @@ footer {
     margin-right: 20px;
 }
 
+.my-projects-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.project {
+    margin-bottom: 20px;
+    border-bottom: gray 1px solid;
+}
+
 
 /* project details page */
 

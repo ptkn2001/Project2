@@ -3,9 +3,9 @@
         <h2>My Projects</h2>
     </div>
     <a class="has-text-light" href="/addnewproject">+Add a new project</a>
+    <div class="divider"></div>
     <div class="my-projects-body">
         {{#each projects as |project|}}
-        <div class="divider"></div>
         <div class="project">
             <div class="project-item-group project-info">
                 <h4 class="has-text-light">{{project.name}}</h4>
@@ -15,9 +15,6 @@
             </div>
             <div class="project-item-group">
                 <img src="./image/{{project.event_type}}.png" alt="Event Type Image">
-            </div>
-            <div class="project-item-group"
-                <p class="has-text-light">{{project.description}}</p>
             </div>
         </div>
         {{/each}}       

@@ -2,6 +2,7 @@
     <div class="has-text-light is-flex is-justify-content-center projects-header">
         <h2>Active Projects</h2>
     </div>
+    <div class="divider"></div>
     <div class="projects-body is-flex">
         <div class="project-info small-device-hidden column-25">
             <img src="./image/calendar.png" alt="Calendar Image">
@@ -9,7 +10,6 @@
         </div>
         <div class="project-list">
         {{#each projects as |project|}}
-        <div class="divider"></div>
         <div class="project">
             <div class="project-item-group project-info column-25">
                 <h4 class="has-text-light">{{project.name}}</h4>
